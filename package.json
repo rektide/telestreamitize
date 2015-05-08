@@ -1,5 +1,5 @@
 {
-	"name": "channel-pump",
+	"name": "telestreamitize",
 	"version": "1.0.0",
 	"description": "Telepathy Message pump",
 	"main": "channel-pump.js",
