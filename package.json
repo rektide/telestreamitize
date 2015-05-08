@@ -1,0 +1,24 @@
+{
+	"name": "channel-pump",
+	"version": "1.0.0",
+	"description": "Telepathy Message pump",
+	"main": "channel-pump.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rektide/channel-pump"
+	},
+	"author": "rektide de la faye",
+	"license": "X",
+	"bugs": {
+		"url": "https://github.com/rektide/channel-pump/issues"
+	},
+	"homepage": "https://github.com/rektide/channel-pump",
+	"dependencies": {
+		"bluebird": "^2.9.25",
+		"byline": "^4.2.1",
+		"dbus-native": "^0.2.0"
+	}
+}
