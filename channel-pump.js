@@ -13,7 +13,7 @@ function pump(opts){
 	var filteredNames= names.filter(filterNames(nameFilter))
 	var channels= filteredNames.map(listChannels()).then(flatten)
 	var filteredChannels= channels.filter(function(channel){
-		return channel.room.indexOf(channelFilter) === -1
+		return channel.room.indexOf(channelFilter) !== -1
 	})
 	var emitter= new (events.EventEmitter)()
 	emitter.names= filteredNames
