@@ -20,13 +20,14 @@ function listChannels(bus){
 					}
 
 					var good= []
+					channels= channels[1][0]
 					for(var i= 0; i< channels.length; ++i){
 						var channel= channels[i]
 						try{
 							good.push({
 								dbusName: name,
-								objectPath: channel[0][0][0],
-								room: channel[0][0][1][4][1][1][0],
+								objectPath: channel[0],
+								room: channel[1][4][1][1][0],
 							})
 						}catch(ex){
 						}

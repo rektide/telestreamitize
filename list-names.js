@@ -1,6 +1,6 @@
 var Promise= require('bluebird')
 
-function getNames(bus){
+function listNames(bus){
 	bus= bus|| require('./bus')
 
 	return new Promise(function(resolve, reject){
@@ -19,7 +19,7 @@ function getNames(bus){
 		})
 	})
 }
-module.exports= getNames
+module.exports= listNames
 
 if(module === require.main){
 	getNames().then(function(names){
