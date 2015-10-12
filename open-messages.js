@@ -14,7 +14,7 @@ function openMessage(opts){
 					return
 				}
 				messages.on('MessageReceived', function(msg){
-					console.log(JSON.stringify(msg))
+					//console.log(JSON.stringify(msg))
 					emitter.emit(muc.room, {
 						content: msg[1][0][1][1][0],
 						sender: msg[0][1][1][1][0],
@@ -22,6 +22,7 @@ function openMessage(opts){
 						time: Date.now()
 					})
 				})
+				resolve()
 			})
 		})
 	}

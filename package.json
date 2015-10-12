@@ -1,6 +1,6 @@
 {
 	"name": "telestreamitize",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Telepathy Message pump",
 	"main": "channel-pump.js",
 	"scripts": {
@@ -19,6 +19,7 @@
 	"dependencies": {
 		"bluebird": "^2.9.25",
 		"byline": "^4.2.1",
-		"dbus-native": "^0.2.0"
+		"dbus-native": "^0.2.0",
+		"http2-push-notice": "^1.0.0"
 	}
 }
