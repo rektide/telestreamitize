@@ -14,13 +14,13 @@ function openMessage(opts){
 					return
 				}
 				messages.on('MessageReceived', function(msg){
-					//console.log(JSON.stringify(msg))
-					emitter.emit(muc.room, {
+					var o= {
 						content: msg[1][0][1][1][0],
 						sender: msg[0][1][1][1][0],
 						room: muc.room,
 						time: Date.now()
-					})
+					}
+					emitter.emit("message", o)
 				})
 				resolve()
 			})

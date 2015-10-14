@@ -16,7 +16,7 @@ function pump(opts){
 	var filteredChannels= channels.filter(function(channel){
 		return channel.room.indexOf(channelFilter) !== -1
 	})
-	var emitter= new (events.EventEmitter)()
+	var emitter= opts.emitter|| new (events.EventEmitter)()
 	emitter.names= filteredNames // expose for others
 	emitter.channels= filteredChannels // expose for others
 	var messages= channels.map(openMessages({emitter: emitter}))
@@ -27,12 +27,12 @@ module.exports= pump
 if(module === require.main){
 	var _emitter= pump()
 	_emitter.then(function(emitter){
-		console.log("emitter")
+		console.log('emitter')
 		emitter.channels.then(function(channels){
 			console.log('channels', channels)
 		})
-		emitter.on('#node.dc', function(){
-			console.log('yeah!', JSON.stringify(arguments))
+		emitter.on('message', function(){
+			console.log('message', JSON.stringify(arguments))
 		})
 	}, function(err){
 		console.error('error connecting', err)
